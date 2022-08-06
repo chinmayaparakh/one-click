@@ -4,3 +4,5 @@ This website also provides you with a receipt of your transaction along with a G
 Built using HTML, CSS, Solidity, Javascript, React, and Web 3.0. 
 3 API's are also used namely News,Cryptomarket and gify.
 Just replace the keys with your keys in their respective folders.
+First read smart_contract readme, then client readme
+Install react, hardhat and vite in cliet so a node module will be generated in client folder. then replace everything with mine.
