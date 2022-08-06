@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="market.css">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/oc.svg" />
+    <title>Rates</title>
+  </head>
+  <body onload="rates()">
+    <h1><b><i>E X C H A N G E &emsp; R A T E S</i></b></h1>
+    <h4>Currency : Exchange Rate to INR</h4>
+    <div id="rts">
+          <p></p>
+    </div>
+
+    <script>
+const rates = () =>{
+        const market = document.getElementById('rts');
+  let url='http://api.coinlayer.com/api/live?access_key=0fb3dd0e14525fe180a8d0b8ed473e9d&target=INR&symbols=BTC,ETH,DOGE,NEO,USDT,ETC,BCH,LTC,NMC,PPC,GRC,XRP,NXT,DASH,XMR,VTC,XLM,XVG,ZEC,EOS,ADA,TRX';
+  fetch(url).then((res)=>{
+    return res.json()
+  }).then((data)=>{
+    console.log(data.rates)
+    let txt = "";
+  for (let x in data.rates) {
+    txt += x + " : " + data.rates[x] + "<br>";
+  };
+    market.innerHTML=txt;
+
+    // data.rates.forEach(article=>{
+    //   let li=document.createElement('li');
+    //   let a=document.createElement('a');
+    //   a.textContent=article;
+    //   li.appendChild(a);
+    //   rts.appendChild(li);
+      
+    //})
+  })
+};
+    </script>
+  </body>
+</html>
